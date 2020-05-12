@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.m
-//  PetAdoptionC
-//
-//  Created by Kenny Kurochkin on 12/05/2020.
-//  Copyright © 2020 Kenny Kurochkin. All rights reserved.
-//
-
 #import "SceneDelegate.h"
 
 @interface SceneDelegate ()
