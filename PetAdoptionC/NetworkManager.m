@@ -1,6 +1,7 @@
 #import "NetworkManager.h"
 
 @implementation NetworkManager
+
 - (void)request: (NSString *)method andURL: (NSString *)url {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -11,11 +12,9 @@
     {
         dispatch_async( dispatch_get_main_queue(),
         ^{
-            // parse returned data
             NSString *result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-            
             NSLog( @"%@", result );
-        } );
+        });
     }];
     
     [task resume];

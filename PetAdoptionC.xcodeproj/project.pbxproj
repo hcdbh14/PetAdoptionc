@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CBA667D56641211099F23BE3 /* Pods_PetAdoptionC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2BE69DC22CFFFCC531764E /* Pods_PetAdoptionC.framework */; };
-		ED17AAD9246BF72000056EC3 /* PetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED17AAD8246BF72000056EC3 /* PetCell.m */; };
+		ED17AAD9246BF72000056EC3 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED17AAD8246BF72000056EC3 /* MovieCell.m */; };
 		ED402C5F246C3AAC00B1B316 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED402C5E246C3AAC00B1B316 /* NetworkManager.m */; };
 		ED4483EF246B2E6200A964D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4483EE246B2E6200A964D3 /* AppDelegate.m */; };
 		ED4483F2246B2E6200A964D3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4483F1246B2E6200A964D3 /* SceneDelegate.m */; };
@@ -17,13 +17,14 @@
 		ED4483FA246B2E6400A964D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED4483F9246B2E6400A964D3 /* Assets.xcassets */; };
 		ED4483FD246B2E6400A964D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4483FB246B2E6400A964D3 /* LaunchScreen.storyboard */; };
 		ED448400246B2E6400A964D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4483FF246B2E6400A964D3 /* main.m */; };
+		ED8AA0F0246C56E000D74D99 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8AA0EF246C56E000D74D99 /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B2BE69DC22CFFFCC531764E /* Pods_PetAdoptionC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetAdoptionC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B269A3989CD8916B1D24DDCD /* Pods-PetAdoptionC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoptionC.debug.xcconfig"; path = "Target Support Files/Pods-PetAdoptionC/Pods-PetAdoptionC.debug.xcconfig"; sourceTree = "<group>"; };
-		ED17AAD7246BF72000056EC3 /* PetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetCell.h; sourceTree = "<group>"; };
-		ED17AAD8246BF72000056EC3 /* PetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetCell.m; sourceTree = "<group>"; };
+		ED17AAD7246BF72000056EC3 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		ED17AAD8246BF72000056EC3 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		ED402C5D246C3AAC00B1B316 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = PetAdoptionC/NetworkManager.h; sourceTree = SOURCE_ROOT; };
 		ED402C5E246C3AAC00B1B316 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = PetAdoptionC/NetworkManager.m; sourceTree = SOURCE_ROOT; };
 		ED4483EA246B2E6200A964D3 /* PetAdoptionC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetAdoptionC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +39,8 @@
 		ED4483FC246B2E6400A964D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED4483FE246B2E6400A964D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED4483FF246B2E6400A964D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED8AA0EE246C56E000D74D99 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Movie.h; path = PetAdoptionC/Movie.h; sourceTree = SOURCE_ROOT; };
+		ED8AA0EF246C56E000D74D99 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = PetAdoptionC/Movie.m; sourceTree = SOURCE_ROOT; };
 		F779129B77AEA683B6D9778E /* Pods-PetAdoptionC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoptionC.release.xcconfig"; path = "Target Support Files/Pods-PetAdoptionC/Pods-PetAdoptionC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,8 +78,8 @@
 			children = (
 				ED4483F3246B2E6200A964D3 /* ViewController.h */,
 				ED4483F4246B2E6200A964D3 /* ViewController.m */,
-				ED17AAD7246BF72000056EC3 /* PetCell.h */,
-				ED17AAD8246BF72000056EC3 /* PetCell.m */,
+				ED17AAD7246BF72000056EC3 /* MovieCell.h */,
+				ED17AAD8246BF72000056EC3 /* MovieCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -86,6 +89,8 @@
 			children = (
 				ED402C5D246C3AAC00B1B316 /* NetworkManager.h */,
 				ED402C5E246C3AAC00B1B316 /* NetworkManager.m */,
+				ED8AA0EE246C56E000D74D99 /* Movie.h */,
+				ED8AA0EF246C56E000D74D99 /* Movie.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,8 +247,9 @@
 			files = (
 				ED4483F5246B2E6200A964D3 /* ViewController.m in Sources */,
 				ED4483EF246B2E6200A964D3 /* AppDelegate.m in Sources */,
+				ED8AA0F0246C56E000D74D99 /* Movie.m in Sources */,
 				ED448400246B2E6400A964D3 /* main.m in Sources */,
-				ED17AAD9246BF72000056EC3 /* PetCell.m in Sources */,
+				ED17AAD9246BF72000056EC3 /* MovieCell.m in Sources */,
 				ED402C5F246C3AAC00B1B316 /* NetworkManager.m in Sources */,
 				ED4483F2246B2E6200A964D3 /* SceneDelegate.m in Sources */,
 			);
