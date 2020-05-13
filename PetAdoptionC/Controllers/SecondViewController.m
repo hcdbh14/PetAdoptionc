@@ -18,6 +18,6 @@
 
 - (void)viewDidLoad {
     
-    self.movieNameLabel.text = _movieName;
+    self.movieNameLabel.text = self.movieName;
 }
 @end
