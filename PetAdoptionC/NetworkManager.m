@@ -2,6 +2,27 @@
 
 @implementation NetworkManager
 
++(NetworkManager *) shared {
+    static NetworkManager *shared = nil;
+    if (!shared) {
+        shared = [[super allocWithZone:nil] init];
+    }
+    return shared;
+}
+
++(id) allocWithZone:(struct _NSZone *)zone {
+    return [self shared];
+}
+
+-(id) init {
+    self = [super init];
+    if (self) {
+        // set variables
+    }
+    return self;
+}
+
+
 - (void)request: (NSString *)method andURL: (NSString *)url completion:(void (^)(NSData *data, NSError *error))completion {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
