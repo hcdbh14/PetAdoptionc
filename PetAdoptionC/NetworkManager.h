@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkManager : NSObject
 
-- (void)request: (NSString *)method andURL: (NSString *)url;
+- (void)request: (NSString *)method andURL: (NSString *)url completion:(void (^)(NSData *data, NSError *error))completion;
 
 
 @end

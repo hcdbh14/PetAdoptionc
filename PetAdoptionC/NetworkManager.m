@@ -2,7 +2,7 @@
 
 @implementation NetworkManager
 
-- (void)request: (NSString *)method andURL: (NSString *)url {
+- (void)request: (NSString *)method andURL: (NSString *)url completion:(void (^)(NSData *data, NSError *error))completion {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString: url]];
@@ -20,14 +20,11 @@
         } else if (statusCode >= 300 && statusCode <= 500) {
             NSString *result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
             NSLog( @" \n 🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻 \n %@", result);
-        }
-        else {
+        } else {
             NSLog(@" \n 🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻 \n %@", error);
         }
-        
-        
+        completion(data, error);
     }];
-    
     [task resume];
 }
 

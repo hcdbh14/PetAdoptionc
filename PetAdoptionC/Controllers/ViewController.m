@@ -21,40 +21,33 @@ static NSString *cellId = @"movieCell";
     self.table.delegate = self;
     self.table.dataSource = self;
     NetworkManager * networkManager = [[NetworkManager alloc] init];
-    [networkManager request:@"GET" andURL:@"http://x-mode.co.il/exam/allMovies/allMovies.txt"];
-    
-    NSString *urlString = @"http://x-mode.co.il/exam/allMovies/allMovies.txt";
-    NSURL *url = [NSURL URLWithString:urlString];
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"finished");
-        
-        
-        NSError *err;
-          NSDictionary *movieJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
-
-  
-        if (err) {
-            NSLog(@"Failed to serialize into JSON: %@", err);
-            return;
-        }
-        
-        NSMutableArray<Movie *> *movieList = NSMutableArray.new;
-        NSLog(@"%@", movieJSON);
-        for (NSDictionary *movieDict in movieJSON[@"movies"]) {
+    [networkManager request:@"GET" andURL:@"http://x-mode.co.il/exam/allMovies/allMovies.txt" completion:^(NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@", error );
+        } else {
+            NSError *err;
+            NSDictionary *movieJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
             
-            NSString *name = movieDict[@"name"];
-            Movie * movie = Movie.new;
-            movie.name = name;
-            [movieList addObject: movie];
-           
+            NSMutableArray<Movie *> *movieList = NSMutableArray.new;
+            NSLog(@"%@", movieJSON);
+            for (NSDictionary *movieDict in movieJSON[@"movies"]) {
+                
+                NSString *name = movieDict[@"name"];
+                Movie * movie = Movie.new;
+                movie.name = name;
+                [movieList addObject: movie];
+            }
+            self.movieList = movieList;
+            NSLog(@"%@", self.movieList);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.table reloadData];
+            });
+            if (err) {
+                NSLog(@"Failed to serialize into JSON: %@", err);
+                return;
+            }
         }
-        self.movieList = movieList;
-        NSLog(@"%@", self.movieList);
-        dispatch_async(dispatch_get_main_queue(), ^{
-             [self.table reloadData];
-        });
-       
-    }] resume];
+    }];;
 }
 
 
