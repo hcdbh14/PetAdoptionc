@@ -2,6 +2,7 @@
 #import "NetworkManager.h"
 #import "Movie.h"
 #import "MovieCell.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate> {
     
@@ -15,8 +16,7 @@
 
 static NSString *cellId = @"movieCell";
 
-- ( void )viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.table.delegate = self;
     self.table.dataSource = self;
@@ -69,5 +69,12 @@ static NSString *cellId = @"movieCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SecondViewController *pushedVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SecondVIewController"];
+    pushedVC.movieName = _movieList[indexPath.row].name;
+
+    [self.navigationController pushViewController:pushedVC animated:YES];
+    
+}
 
 @end

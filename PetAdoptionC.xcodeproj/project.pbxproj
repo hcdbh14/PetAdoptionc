@@ -18,6 +18,7 @@
 		ED4483FD246B2E6400A964D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4483FB246B2E6400A964D3 /* LaunchScreen.storyboard */; };
 		ED448400246B2E6400A964D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4483FF246B2E6400A964D3 /* main.m */; };
 		ED8AA0F0246C56E000D74D99 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8AA0EF246C56E000D74D99 /* Movie.m */; };
+		EDE83617246C8E6D008E2E15 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE83616246C8E6D008E2E15 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		ED4483FF246B2E6400A964D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED8AA0EE246C56E000D74D99 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Movie.h; path = PetAdoptionC/Movie.h; sourceTree = SOURCE_ROOT; };
 		ED8AA0EF246C56E000D74D99 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = PetAdoptionC/Movie.m; sourceTree = SOURCE_ROOT; };
+		EDE83615246C8E6D008E2E15 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		EDE83616246C8E6D008E2E15 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F779129B77AEA683B6D9778E /* Pods-PetAdoptionC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetAdoptionC.release.xcconfig"; path = "Target Support Files/Pods-PetAdoptionC/Pods-PetAdoptionC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +83,8 @@
 				ED4483F4246B2E6200A964D3 /* ViewController.m */,
 				ED17AAD7246BF72000056EC3 /* MovieCell.h */,
 				ED17AAD8246BF72000056EC3 /* MovieCell.m */,
+				EDE83615246C8E6D008E2E15 /* SecondViewController.h */,
+				EDE83616246C8E6D008E2E15 /* SecondViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				ED4483EF246B2E6200A964D3 /* AppDelegate.m in Sources */,
 				ED8AA0F0246C56E000D74D99 /* Movie.m in Sources */,
 				ED448400246B2E6400A964D3 /* main.m in Sources */,
+				EDE83617246C8E6D008E2E15 /* SecondViewController.m in Sources */,
 				ED17AAD9246BF72000056EC3 /* MovieCell.m in Sources */,
 				ED402C5F246C3AAC00B1B316 /* NetworkManager.m in Sources */,
 				ED4483F2246B2E6200A964D3 /* SceneDelegate.m in Sources */,

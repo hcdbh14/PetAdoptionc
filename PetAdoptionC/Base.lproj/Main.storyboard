@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aPE-fu-jGE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="V0N-Na-bnF">
+            <objects>
+                <navigationController id="aPE-fu-jGE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="apG-nO-nVA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C3X-Ym-xoE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUO-x9-PjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564" y="100"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,8 +32,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eZZ-eD-MWp">
-                                <rect key="frame" x="0.0" y="141" width="414" height="760"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="185" width="414" height="716"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="7mj-5X-rn6" customClass="MovieCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -29,16 +45,18 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV7-Iq-1zE">
                                                     <rect key="frame" x="186" y="11" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="vV7-Iq-1zE" firstAttribute="centerX" secondItem="wqS-SH-HXW" secondAttribute="centerX" id="Bdf-Pv-DWa"/>
                                                 <constraint firstItem="vV7-Iq-1zE" firstAttribute="top" secondItem="wqS-SH-HXW" secondAttribute="topMargin" id="NbH-uC-xvL"/>
                                                 <constraint firstItem="vV7-Iq-1zE" firstAttribute="centerY" secondItem="wqS-SH-HXW" secondAttribute="centerY" id="Pfx-X1-ERI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <connections>
                                             <outlet property="movieName" destination="vV7-Iq-1zE" id="fn3-jL-MKY"/>
                                         </connections>
@@ -46,7 +64,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5ah-Hl-6fd"/>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bqv-67-gWU"/>
@@ -59,13 +77,46 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4QC-ia-318"/>
                     <connections>
                         <outlet property="table" destination="eZZ-eD-MWp" id="Da7-Mw-MOr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="108.48214285714285"/>
+            <point key="canvasLocation" x="416" y="101"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="uVH-Hg-BAl">
+            <objects>
+                <viewController storyboardIdentifier="SecondVIewController" id="4F2-Jr-U6x" customClass="SecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pbj-Ex-dbE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bic-JX-7AT">
+                                <rect key="frame" x="39" y="438" width="336" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bic-JX-7AT" firstAttribute="leading" secondItem="kjr-ii-2No" secondAttribute="leading" constant="39" id="Apx-Rc-cL6"/>
+                            <constraint firstItem="kjr-ii-2No" firstAttribute="bottom" secondItem="bic-JX-7AT" secondAttribute="bottom" constant="403" id="Gh7-6D-Clk"/>
+                            <constraint firstItem="kjr-ii-2No" firstAttribute="trailing" secondItem="bic-JX-7AT" secondAttribute="trailing" constant="39" id="k7o-uN-ymN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kjr-ii-2No"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieName" destination="bic-JX-7AT" id="uUR-6i-RQJ"/>
+                        <outlet property="movieNameLabel" destination="bic-JX-7AT" id="NZP-82-EXl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKY-hc-cfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.0434782608697" y="107.8125"/>
         </scene>
     </scenes>
 </document>
