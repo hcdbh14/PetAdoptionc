@@ -9,12 +9,23 @@
     [request setHTTPMethod: method];
     
     NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^( NSData *data, NSURLResponse *response, NSError *error )
-    {
-        dispatch_async( dispatch_get_main_queue(),
-        ^{
+                                  {
+        
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        NSInteger statusCode = [httpResponse statusCode];
+        
+        if (statusCode >= 200 && statusCode < 299) {
             NSString *result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-            NSLog( @"%@", result );
-        });
+            NSLog( @" \n 🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹 \n %@", result );
+        } else if (statusCode >= 300 && statusCode <= 500) {
+            NSString *result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog( @" \n 🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻 \n %@", result);
+        }
+        else {
+            NSLog(@" \n 🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻 \n %@", error);
+        }
+        
+        
     }];
     
     [task resume];
@@ -26,7 +37,7 @@
     static NSURLSession *session = nil;
     static dispatch_once_t onceToken;
     dispatch_once( &onceToken,
-    ^{
+                  ^{
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         session = [NSURLSession sessionWithConfiguration:configuration];
     } );

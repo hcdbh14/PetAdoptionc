@@ -20,8 +20,8 @@ static NSString *cellId = @"movieCell";
     [super viewDidLoad];
     self.table.delegate = self;
     self.table.dataSource = self;
-//    NetworkManager * networkManager = [[NetworkManager alloc] init];
-//    [networkManager request:@"GET" andURL:@"http://x-mode.co.il/exam/allMovies/allMovies.txt"];
+    NetworkManager * networkManager = [[NetworkManager alloc] init];
+    [networkManager request:@"GET" andURL:@"http://x-mode.co.il/exam/allMovies/allMovies.txt"];
     
     NSString *urlString = @"http://x-mode.co.il/exam/allMovies/allMovies.txt";
     NSURL *url = [NSURL URLWithString:urlString];
