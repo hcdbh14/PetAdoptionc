@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondViewController : UIViewController
-@property (strong, nonatomic) NSMutableString * movieName;
+@property (strong, nonatomic) NSString * movieName;
 
 @end
 
