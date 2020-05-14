@@ -4,10 +4,12 @@
 #import "MovieCell.h"
 #import "SecondViewController.h"
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate> {
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
     
 }
+@property (strong, nonatomic) NSMutableArray<Movie *> *searchBarData;
 @property (strong, nonatomic) NSMutableArray<Movie *> *movieList;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end
@@ -20,6 +22,7 @@ static NSString *cellId = @"movieCell";
     [super viewDidLoad];
     self.table.delegate = self;
     self.table.dataSource = self;
+    self.searchBar.delegate = self;
     [self sendRequest];
 }
 
@@ -42,6 +45,7 @@ static NSString *cellId = @"movieCell";
                 [movieList addObject: movie];
             }
             self.movieList = movieList;
+            self.searchBarData = movieList;
             NSLog(@"%@", self.movieList);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.table reloadData];
@@ -72,9 +76,22 @@ static NSString *cellId = @"movieCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SecondViewController *pushedVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SecondVIewController"];
     pushedVC.movieName = _movieList[indexPath.row].name;
-
-    [self.navigationController pushViewController:pushedVC animated:YES];
     
+    [self.navigationController pushViewController:pushedVC animated:YES];
 }
 
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 0) {
+        self.movieList = self.searchBarData;
+    } else {
+        for (id object in self.searchBarData) {
+            if ([object containsString: searchText] == false) {
+                [self.movieList removeObjectAtIndex: 0];
+            }
+        }
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.table reloadData];
+    });
+}
 @end

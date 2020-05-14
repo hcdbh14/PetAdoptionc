@@ -39,14 +39,14 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="7mj-5X-rn6" customClass="MovieCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7mj-5X-rn6" id="wqS-SH-HXW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV7-Iq-1zE">
-                                                    <rect key="frame" x="186" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="186" y="11" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -66,13 +66,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sjd-6Z-cth">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5ah-Hl-6fd"/>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bqv-67-gWU"/>
+                            <constraint firstItem="sjd-6Z-cth" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IZe-bb-Vft"/>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ms9-TQ-WiN"/>
                             <constraint firstAttribute="bottom" secondItem="eZZ-eD-MWp" secondAttribute="bottom" constant="-5" id="SsT-Ci-Bsz"/>
+                            <constraint firstItem="eZZ-eD-MWp" firstAttribute="top" secondItem="sjd-6Z-cth" secondAttribute="bottom" constant="53" id="XQU-cY-PCm"/>
+                            <constraint firstItem="sjd-6Z-cth" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aNp-Il-mcU"/>
+                            <constraint firstItem="sjd-6Z-cth" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="biR-pJ-MNg"/>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="lXV-RX-IJj"/>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="qJK-fO-QZP"/>
                             <constraint firstItem="eZZ-eD-MWp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tR0-vA-6lA"/>
@@ -82,6 +90,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movie List" largeTitleDisplayMode="always" id="4QC-ia-318"/>
                     <connections>
+                        <outlet property="searchBar" destination="sjd-6Z-cth" id="5QU-Gk-BH2"/>
                         <outlet property="table" destination="eZZ-eD-MWp" id="Da7-Mw-MOr"/>
                     </connections>
                 </viewController>

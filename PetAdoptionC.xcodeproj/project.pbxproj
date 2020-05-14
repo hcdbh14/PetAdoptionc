@@ -81,10 +81,10 @@
 			children = (
 				ED4483F3246B2E6200A964D3 /* ViewController.h */,
 				ED4483F4246B2E6200A964D3 /* ViewController.m */,
-				ED17AAD7246BF72000056EC3 /* MovieCell.h */,
-				ED17AAD8246BF72000056EC3 /* MovieCell.m */,
 				EDE83615246C8E6D008E2E15 /* SecondViewController.h */,
 				EDE83616246C8E6D008E2E15 /* SecondViewController.m */,
+				ED17AAD7246BF72000056EC3 /* MovieCell.h */,
+				ED17AAD8246BF72000056EC3 /* MovieCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
